@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :name, :email
-  
+  has_many :microposts
   email_regexp = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
   validates :name, :presence => true,

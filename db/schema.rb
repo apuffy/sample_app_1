@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111124224107) do
+ActiveRecord::Schema.define(:version => 20111201155333) do
+
+  create_table "mircoposts", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "mircoposts", ["user_id"], :name => "index_mircoposts_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
